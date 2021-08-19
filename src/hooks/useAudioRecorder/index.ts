@@ -80,7 +80,6 @@ const useAudioRecorder = () => {
 
             mediaRecorder.onstop = () => {
                 const blob = new Blob(chunks, {type: 'audio/ogg; codecs=opus'})
-                console.log(blob)
                 chunks = [];
 
                 setAudioRecorderState(prevState => {
