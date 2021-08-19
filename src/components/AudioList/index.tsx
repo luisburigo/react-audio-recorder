@@ -1,5 +1,6 @@
 import {Props} from "./types";
 import {AudioContainer, Container, EmptyAudio} from "./styles";
+import Audio from "../Audio";
 
 const AudioList = ({audios}: Props) => {
     const hasAudios = audios.length;
@@ -18,7 +19,7 @@ const AudioList = ({audios}: Props) => {
         <Container>
             {audios.map(audio => (
                 <AudioContainer key={audio.key}>
-                    <audio src={audio.src} controls/>
+                    <Audio src={audio.src}/>
                 </AudioContainer>
             ))}
         </Container>
