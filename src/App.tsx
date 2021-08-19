@@ -3,6 +3,7 @@ import AudioContainer from "./components/AudioContainer";
 import AudioControls from "./components/AudioControls";
 import useAudioRecorder from "./hooks/useAudioRecorder";
 import useAudioList from "./hooks/useAudioList";
+import AudioList from "./components/AudioList";
 
 function App() {
     const {audioRecorderState, ...handlers} = useAudioRecorder();
@@ -22,7 +23,7 @@ function App() {
                     saveRecording={saveRecording}
                     startRecording={startRecording}
                 />
-                {JSON.stringify(audioList)}
+                <AudioList audios={audioList}/>
             </AudioContainer>
         </Layout>
     );
