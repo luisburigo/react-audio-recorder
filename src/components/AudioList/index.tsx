@@ -11,7 +11,7 @@ const AudioList = ({audios}: Props) => {
     return (
         <Container>
             {audios.map(audio => (
-                <audio src={audio.src}/>
+                <audio key={audio.key} src={audio.src} controls/>
             ))}
         </Container>
     )
