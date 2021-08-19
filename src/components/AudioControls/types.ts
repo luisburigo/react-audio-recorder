@@ -6,3 +6,7 @@ export interface Props {
     saveRecording: () => void;
     cancelRecording: () => void;
 }
+
+export interface CounterProps {
+    showIndicator?: boolean;
+}
