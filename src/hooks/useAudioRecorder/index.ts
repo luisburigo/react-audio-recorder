@@ -15,6 +15,7 @@ const initialState: State = {
 
 const useAudioRecorder = () => {
     const [audioRecorderState, setAudioRecorderState] = useState<State>(initialState);
+    const { mediaRecorder } = audioRecorderState;
 
     useEffect(() => {
         let recordingInterval: NodeJS.Timeout;
@@ -68,7 +69,6 @@ const useAudioRecorder = () => {
     }, [audioRecorderState.mediaStream]);
 
     useEffect(() => {
-        const {mediaRecorder} = audioRecorderState;
         let chunks: Blob[] = [];
 
         if (mediaRecorder && mediaRecorder.state === "inactive") {
@@ -100,7 +100,7 @@ const useAudioRecorder = () => {
                 }
             }
         }
-    }, [audioRecorderState.mediaRecorder]);
+    }, [mediaRecorder]);
 
     return {
         audioRecorderState,
