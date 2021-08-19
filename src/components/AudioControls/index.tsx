@@ -1,7 +1,8 @@
+import {MdCancel as CancelIcon, MdMic as MicIcon, MdSave as SaveIcon} from "react-icons/md";
+import formatTime from "utils/formatTime";
+
 import {Props} from "./types";
 import {Container, Counter, CounterContainer, IconCancelContainer, IconContainer} from "./styles";
-import {MdCancel as CancelIcon, MdMic as MicIcon, MdSave as SaveIcon} from "react-icons/md";
-import formatTime from "../../utils/formatTime";
 
 const AudioControls = (props: Props) => {
     const {minutes, seconds, starded, ...handlers} = props;
