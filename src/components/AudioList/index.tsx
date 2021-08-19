@@ -1,17 +1,25 @@
 import {Props} from "./types";
-import {Container, EmptyAudio} from "./styles";
+import {AudioContainer, Container, EmptyAudio} from "./styles";
 
 const AudioList = ({audios}: Props) => {
     const hasAudios = audios.length;
 
     if (!hasAudios) {
-        return <EmptyAudio/>
+        return (
+            <Container>
+                <EmptyAudio>
+                    Empty audio list 😒
+                </EmptyAudio>
+            </Container>
+        )
     }
 
     return (
         <Container>
             {audios.map(audio => (
-                <audio key={audio.key} src={audio.src} controls/>
+                <AudioContainer key={audio.key}>
+                    <audio src={audio.src} controls/>
+                </AudioContainer>
             ))}
         </Container>
     )
